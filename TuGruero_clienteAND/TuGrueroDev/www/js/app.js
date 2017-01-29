@@ -1250,3 +1250,7 @@ function inicar() {
 	}, false);
 }
 */
+function anioPoliza(){
+    
+    
+}
