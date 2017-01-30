@@ -143,9 +143,8 @@ function verificacion() {
         
 }
 function verificacionNuevaPoliza() {
-
-    console.log("verifica nueva poliza");
-    var OK = nombresCheck($('#input-nombres').val()) ? apellidosCheck($('#input-apellidos').val()) ? marcaCheck($('#input-marca').val()) ? modeloCheck($('#input-modelo').val()) ? anioCheck($('#input-anio').val()) ? colorCheck($('#input-color').val()) ?  avanzarGeneric("#noasegurado") : false : false : false : false : false : false;
+    console.log('crear poliza y luego efectuar el login');
+    var OK = nombresCheck($('#input-nombres').val()) ? apellidosCheck($('#input-apellidos').val()) ? marcaCheck($('#input-marca').val()) ? modeloCheck($('#input-modelo').val()) ? anioCheck($('#input-anio').val()) ? colorCheck($('#input-color').val()) ?  avanzarGeneric("#comentarios") : false : false : false : false : false : false;
 
         
 }
@@ -161,7 +160,7 @@ function nombresCheck(nombres) {
 
 	};
 
-	parametros.mensaje = (nombres.length >= 3) ? "OK" : mNombres.Vacio;
+	parametros.mensaje = (nombres.length >= 3) ? (nombres.length <= 45) ? "OK": mNombres.Invalido : mNombres.Vacio;
 
 	return (parametros.mensaje === "OK") ? true : genericPop(parametros);
 }
@@ -177,7 +176,7 @@ function apellidosCheck(apellidos) {
 
 	};
 
-	parametros.mensaje = (apellidos.length >= 3) ? "OK" : mApellidos.Vacio;
+	parametros.mensaje = (apellidos.length >= 3) ? (apellidos.length <= 45) ? "OK": mApellidos.Invalido : mApellidos.Vacio;
 
 	return (parametros.mensaje === "OK") ? true : genericPop(parametros);
 }
@@ -209,7 +208,7 @@ function modeloCheck(modelo) {
 
 	};
 
-	parametros.mensaje = (modelo.length >= 3) ? "OK" : mModelo.Vacio;
+	parametros.mensaje = (modelo.length >= 1) ? (modelo.length <= 25) ? "OK": mModelo.Invalido : mModelo.Vacio;
 
 	return (parametros.mensaje === "OK") ? true : genericPop(parametros);
 }
@@ -225,7 +224,7 @@ function anioCheck(anio) {
 
 	};
 
-	parametros.mensaje = (anio.length >= 3) ? "OK" : mAnio.Vacio;
+	parametros.mensaje = (anio.length >= 4) ? "OK" : mAnio.Vacio;
 
 	return (parametros.mensaje === "OK") ? true : genericPop(parametros);
 }
@@ -241,7 +240,7 @@ function colorCheck(color) {
 
 	};
 
-	parametros.mensaje = (color.length >= 3) ? "OK" : mColor.Vacio;
+	parametros.mensaje = (color.length >= 3) ? (color.length <= 20) ? "OK": mColor.Invalido : mColor.Vacio;
 
 	return (parametros.mensaje === "OK") ? true : genericPop(parametros);
 }
@@ -1251,6 +1250,12 @@ function inicar() {
 }
 */
 function anioPoliza(){
-    
+    var fecha = new Date();
+    var i;
+    var ano = fecha.getFullYear();
+    for(i = ano; i >=(ano-50);i--){
+        
+        $('#input-anio').append("<option value='"+ i +"'>"+ i +"</option>");
+    }
     
 }

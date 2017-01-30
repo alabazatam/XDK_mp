@@ -95,7 +95,7 @@ app.initDebug = function () {
 	"use strict";
 	var fName = "app.initDebug():";
 	app.consoleLog(fName, "entry");
-
+        anioPoliza();
 	if (window.device && device.cordova) { // old Cordova 2.x version detection
 		app.consoleLog("device.version: " + device.cordova); // print the cordova version string...
 		app.consoleLog("device.model: " + device.model);

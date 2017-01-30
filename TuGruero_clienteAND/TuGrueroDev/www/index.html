@@ -245,8 +245,8 @@
 									<input class="wide-control form-control default" type="text" placeholder="ej. ABCD000" id="placa">
 								</div>
 								<div class="table-thing widget uib_w_8 label-textos ancho-inputs d-margins input-padd text-center" data-uib="twitter%20bootstrap/input" data-ver="1">
-									<button class="btn btn-success" id="btn-asegurado">Asegurado</button>
-									<button class="btn btn-default" id="btn-noasegurado">No asegurado</button>
+									<button class="btn btn-success btn widget uib_w_19 boton-base-texto btn-base Pie-Boton" id="btn-asegurado" >Asegurado</button>
+									<button class="btn btn-default btn widget uib_w_19 boton-base-texto btn-base Pie-Boton" id="btn-noasegurado">No asegurado</button>
 								</div>
 								<div class="table-thing widget uib_w_10 label-textos ancho-inputs input-margen input-padd" data-uib="twitter%20bootstrap/select" data-ver="1" id="div_seguro">
 									<label class="narrow-control label-inline">Seguro</label>
@@ -339,7 +339,73 @@
 								</div>
 								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
 									<label class="narrow-control label-inline" for="input-zona">Marca</label>
-									<input class="wide-control form-control default" type="text" id="input-marca" placeholder="...">
+									<!--<input class="wide-control form-control default" type="text" id="input-marca" placeholder="...">-->
+                                                                        <select id="input-marca" class="wide-control form-control default input-padd">        
+                                                                            <option value="Acura">Acura</option>
+                                                                            <option value="Alfa Romeo">Alfa Romeo</option>
+                                                                            <option value="Aston Martin">Aston Martin</option>
+                                                                            <option value="Audi">Audi</option>
+                                                                            <option value="BMW">BMW</option>
+                                                                            <option value="BYD">BYD</option>
+                                                                            <option value="Buick">Buick</option>
+                                                                            <option value="Cadillac">Cadillac</option>
+                                                                            <option value="Chana">Chana</option>
+                                                                            <option value="Changhe">Changhe</option>
+                                                                            <option value="Chery">Chery</option>
+                                                                            <option value="Chevrolet">Chevrolet</option>
+                                                                            <option value="Chrysler">Chrysler</option>
+                                                                            <option value="Citroën">Citroën</option>
+                                                                            <option value="Corvette">Corvette</option>
+                                                                            <option value="Daewoo">Daewoo</option>
+                                                                            <option value="Dodge">Dodge</option>
+                                                                            <option value="Dongfeng">Dongfeng</option>
+                                                                            <option value="Ferrari">Ferrari</option>
+                                                                            <option value="Fiat">Fiat</option>
+                                                                            <option value="Ford">Ford</option>
+                                                                            <option value="Geely">Geely</option>
+                                                                            <option value="Great Wall">Great Wall</option>
+                                                                            <option value="Hafei">Hafei</option>
+                                                                            <option value="Haima">Haima</option>
+                                                                            <option value="Honda">Honda</option>
+                                                                            <option value="Hummer">Hummer</option>
+                                                                            <option value="Hyundai">Hyundai</option>
+                                                                            <option value="Infiniti">Infiniti</option>
+                                                                            <option value="Isuzu">Isuzu</option>
+                                                                            <option value="JMC">JMC</option>
+                                                                            <option value="Jaguar">Jaguar</option>
+                                                                            <option value="Jeep">Jeep</option>
+                                                                            <option value="Kia">Kia</option>
+                                                                            <option value="Lada">Lada</option>
+                                                                            <option value="Land Rover">Land Rover</option>
+                                                                            <option value="Lexus">Lexus</option>
+                                                                            <option value="Lifan">Lifan</option>
+                                                                            <option value="Lincoln">Lincoln</option>
+                                                                            <option value="Maserati">Maserati</option>
+                                                                            <option value="Mazda">Mazda</option>
+                                                                            <option value="6038">Mercedes Benz</option>
+                                                                            <option value="Mercury">Mercury</option>
+                                                                            <option value="Mini">Mini</option>
+                                                                            <option value="Mitsubishi">Mitsubishi</option>
+                                                                            <option value="Nissan">Nissan</option>
+                                                                            <option value="Peugeot">Peugeot</option>
+                                                                            <option value="Pontiac">Pontiac</option>
+                                                                            <option value="Porsche">Porsche</option>
+                                                                            <option value="Renault">Renault</option>
+                                                                            <option value="Saic Wuling">Saic Wuling</option>
+                                                                            <option value="Scion">Scion</option>
+                                                                            <option value="Seat">Seat</option>
+                                                                            <option value="Skoda">Skoda</option>
+                                                                            <option value="Smart">Smart</option>
+                                                                            <option value="Subaru">Subaru</option>
+                                                                            <option value="Suzuki">Suzuki</option>
+                                                                            <option value="Tata">Tata</option>
+                                                                            <option value="Toyota">Toyota</option>
+                                                                            <option value="Tyanye">Tyanye</option>
+                                                                            <option value="Volkswagen">Volkswagen</option>
+                                                                            <option value="Zhongxing">Zhongxing</option>
+                                                                            <option value="Zotye">Zotye</option>
+                                                                            <option value="Otra">Otra</option>
+                                                                        </select>
 								</div>
 								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
 									<label class="narrow-control label-inline" for="input-zona">Modelo</label>
@@ -347,8 +413,9 @@
 								</div>
 								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
 									<label class="narrow-control label-inline" for="input-zona">Año</label>
-									<input class="wide-control form-control default" type="text" id="input-anio" placeholder="...">
-								</div>
+									<!--<input class="wide-control form-control default" type="text" id="input-anio" placeholder="...">-->
+                                                                        <select id="input-anio" class="wide-control form-control default input-padd"></select>
+                                                                </div>
 								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
 									<label class="narrow-control label-inline" for="input-zona">Color</label>
 									<input class="wide-control form-control default" type="text" id="input-color" placeholder="...">
