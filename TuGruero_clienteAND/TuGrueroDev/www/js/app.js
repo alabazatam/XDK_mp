@@ -80,6 +80,7 @@ function Advertencia(accion) {
 	} : function () {
 		$("#popupEntrar").modal("hide");
 		activate_page('#paginaApp');
+                
 	};
 	mAccion();
 }
@@ -144,7 +145,7 @@ function verificacion() {
 }
 function verificacionNuevaPoliza() {
     console.log('crear poliza y luego efectuar el login');
-    var OK = nombresCheck($('#input-nombres').val()) ? apellidosCheck($('#input-apellidos').val()) ? marcaCheck($('#input-marca').val()) ? modeloCheck($('#input-modelo').val()) ? anioCheck($('#input-anio').val()) ? colorCheck($('#input-color').val()) ?  avanzarGeneric("#comentarios") : false : false : false : false : false : false;
+    var OK = nombresCheck($('#input-nombres').val()) ? apellidosCheck($('#input-apellidos').val()) ? marcaCheck($('#input-marca').val()) ? modeloCheck($('#input-modelo').val()) ? anioCheck($('#input-anio').val()) ? colorCheck($('#input-color').val()) ?  avanzarGeneric("#sub_cat") : false : false : false : false : false : false;
 
         
 }
@@ -1091,13 +1092,17 @@ function siguienteResumen(boton) {
 	var terminos = $(boton).attr('value');
 	solicitud.CellContacto = cellphone;
 	solicitud.InfoAdicional = $('#comentarios-add').val();
+        if(params.Asegurado == 'SI'){
+            //hace la solicitud inmediatamente
+            var OK = ($.isNumeric(cellphone)) ? (cellphone.indexOf('.') < 0) ? (cellphone.length === 11) ? (terminos === "Si") ? enviarSolicitud() : numeroInvalido(msn.AceptarCondiciones) : numeroInvalido(mNumero.Invalido) : numeroInvalido(mNumero.Signo) : (cellphone.length === 0) ? numeroInvalido(mNumero.Vacio) : numeroInvalido(mNumero.Letras);
+                
+        }else{
+            //enviar a pantalla de mercadopago
+            var OK = ($.isNumeric(cellphone)) ? (cellphone.indexOf('.') < 0) ? (cellphone.length === 11) ? (terminos === "Si") ? avanzarGeneric('#mercadopago') : numeroInvalido(msn.AceptarCondiciones) : numeroInvalido(mNumero.Invalido) : numeroInvalido(mNumero.Signo) : (cellphone.length === 0) ? numeroInvalido(mNumero.Vacio) : numeroInvalido(mNumero.Letras);
+    
+        }
 
-    //hace la solicitud inmediatamente
-	/*var OK = ($.isNumeric(cellphone)) ? (cellphone.indexOf('.') < 0) ? (cellphone.length === 11) ? (terminos === "Si") ? enviarSolicitud() : numeroInvalido(msn.AceptarCondiciones) : numeroInvalido(mNumero.Invalido) : numeroInvalido(mNumero.Signo) : (cellphone.length === 0) ? numeroInvalido(mNumero.Vacio) : numeroInvalido(mNumero.Letras);*/
-    
-    //enviar a pantalla de mercadopago
-    var OK = ($.isNumeric(cellphone)) ? (cellphone.indexOf('.') < 0) ? (cellphone.length === 11) ? (terminos === "Si") ? avanzarGeneric('#mercadopago') : numeroInvalido(msn.AceptarCondiciones) : numeroInvalido(mNumero.Invalido) : numeroInvalido(mNumero.Signo) : (cellphone.length === 0) ? numeroInvalido(mNumero.Vacio) : numeroInvalido(mNumero.Letras);
-    
+
     
 }
 
