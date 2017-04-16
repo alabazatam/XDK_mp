@@ -463,7 +463,7 @@ function LoginGrua() {
 function AjaxCall(URL, parametros, exito, fallo, extra) {
 	console.log(extra);
 	jqxhr = $.ajax({
-		url: "https://tugruero.com/grueroapp/" + URL,
+		url: "http://tugruero.com/grueroapp/" + URL,
 		type: "POST",
 		data: JSON.stringify(parametros),
 		dataType: "JSON",
