@@ -27,6 +27,7 @@ function enviarSolicitud() {
 
 	genericPop(parametros);
 	moreMSN = 0;
+        console.log("send solicitud");
 	sendSolicitud();
 }
 
@@ -35,9 +36,23 @@ function enviarSolicitud() {
 function sendSolicitud() {
 
 	//solicitud.Modelo = misDatos.Modelo;
+        //unionObjetos.assign(solicitud, params);
+        //console.log(unionObjetos);
+        solicitud.Cedula = params.Cedula;
+        solicitud.Placa = params.Placa;
+        solicitud.Seguro = params.Seguro;
+        solicitud.Asegurado = params.Asegurado;
+        solicitud.Nombres = params.Nombres;
+        solicitud.Apellidos = params.Apellidos;
+        solicitud.Marca = params.Marca;
+        solicitud.Modelo = params.Modelo;
+        solicitud.Anio = params.Anio;
+        solicitud.Color = params.Color;
+        solicitud.Clase = params.Clase;
+        solicitud.Tipo = params.Tipo;
 	console.log("Se comentó: solicitud.Modelo");
 	AjaxCall("solicitudCliente.php", solicitud, validarSolicitud, errorSolicitud);
-
+        
 }
 
 

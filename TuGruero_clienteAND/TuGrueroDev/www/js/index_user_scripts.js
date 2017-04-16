@@ -284,6 +284,10 @@
 			/*global activate_page */
                         verificacionNuevaPoliza();
 		});
+		$(document).on("change", "#input-clase", function (evt) {
+			/*global activate_page */
+                        ocultaTipo();
+		});
 
 		///PRUEBA BOTON 
 		$(document).on("click", "#btn-prueba", function (evt) {

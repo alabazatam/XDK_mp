@@ -10,19 +10,48 @@ var callInterval = "";
 
 //var params = "";
 var params = {
-	"ID": "V",
-	"Cedula": "",
-	"Placa": "",
-	"Seguro": "",
-        "Asegurado": "SI",
-        "Nombres": "",
-        "Apellidos": "",
-        "Marca": "",
-        "Modelo": "",
-        "Anio": "",
-        "Color": ""
+    "ID": "V",
+    "Cedula": "",
+    "Placa": "",
+    "Seguro": "",
+    "Asegurado": "SI",
+    "Nombres": "",
+    "Apellidos": "",
+    "Marca": "",
+    "Modelo": "",
+    "Anio": "",
+    "Color": "",
+    "Clase": "",
+    "Tipo": ""
 };
-
+var solicitud = {
+    "idPoliza": "",
+    "latOrigen": "",
+    "lngOrigen": "",
+    "latDestino": "",
+    "lngDestino": "",
+    "Direccion": "",
+    "CellContacto": "",
+    "EstadoOrigen": "",
+    "EstadoDestino": "",
+    "QueOcurre": "",
+    "Neumaticos": "",
+    "Situacion": "",
+    "GruaType": "",
+    "InfoAdicional": "",
+    "Cedula": "",
+    "Placa": "",
+    "Seguro": "",
+    "Asegurado": "SI",
+    "Nombres": "",
+    "Apellidos": "",
+    "Marca": "",
+    "Modelo": "",
+    "Anio": "",
+    "Color": "",
+    "Clase": "",
+    "Tipo": ""
+};
 //Identificadores para desactivar botones de siguiente.
 var nextBtn = {
 	"#v_carga": "#btn-carga-next",
@@ -53,23 +82,6 @@ var grualatlng = "";
 
 var btnTermino;
 
-var solicitud = {
-	"idPoliza": "",
-	"latOrigen": "",
-	"lngOrigen": "",
-	"latDestino": "",
-	"lngDestino": "",
-	"Direccion": "",
-	"CellContacto": "",
-	"EstadoOrigen": "",
-    "EstadoDestino": "",
-	"QueOcurre": "",
-	"Neumaticos": "",
-	"Situacion": "",
-	"GruaType": "",
-	"InfoAdicional": "",
-	Modelo: "",
-};
 
 
 //Administra la ventana de Adevertencia al inicio
@@ -132,6 +144,7 @@ function verificacion() {
 	params.Cedula = params.ID + "-" + $('#cedula').val();
 	params.Placa = $('#placa').val().toUpperCase().replace(/[^a-zA-Z0-9]/g, '');
 	params.Seguro = $('#seguro').val();
+
         console.log(params.Asegurado);
         
         if(params.Asegurado == "SI"){
@@ -144,6 +157,14 @@ function verificacion() {
         
 }
 function verificacionNuevaPoliza() {
+        params.Marca = $('#input-marca').val();
+        params.Modelo = $('#input-modelo').val();
+        params.Nombres = $('#input-nombres').val();
+        params.Apellidos = $('#input-apellidos').val();
+        params.Color = $('#input-color').val();
+        params.Anio = $('#input-anio').val();
+        params.Clase = $('#input-clase').val();
+        params.Tipo = $('#input-tipo').val();
     console.log('crear poliza y luego efectuar el login');
     var OK = nombresCheck($('#input-nombres').val()) ? apellidosCheck($('#input-apellidos').val()) ? marcaCheck($('#input-marca').val()) ? modeloCheck($('#input-modelo').val()) ? anioCheck($('#input-anio').val()) ? colorCheck($('#input-color').val()) ?  avanzarGeneric("#sub_cat") : false : false : false : false : false : false;
 
@@ -935,7 +956,7 @@ function enviarGPS() {
 	mlatlng = new google.maps.LatLng(solicitud.latOrigen, solicitud.lngOrigen);
 	reverseGeo(mlatlng);
 	avanzarGeneric('#destino');
-
+        //console.log("Origen" + mlatlng);
 
 	var parametros = {
 		"popup": "pop-generic",
@@ -1017,8 +1038,13 @@ function siguienteAjustar() {
 
 	mlatlng = new google.maps.LatLng(solicitud.latDestino, solicitud.lngDestino);
 	reverseGeoDestino(mlatlng);
-
-
+        //console.log("Destino"+ mlatlng);
+        console.log("LatOrigen" + solicitud.latOrigen);
+        console.log("LngOrigen" + solicitud.lngOrigen);
+        console.log("LatDestino" + solicitud.latDestino);
+        console.log("LngDestino" + solicitud.lngDestino);
+        console.log("Cedula" + params.Cedula);
+        console.log("hago el calculo de baremo");
 	var parametros = {
 		"popup": "pop-generic",
 		"imagen": "Casa",
@@ -1263,4 +1289,11 @@ function anioPoliza(){
         $('#input-anio').append("<option value='"+ i +"'>"+ i +"</option>");
     }
     
+}
+function ocultaTipo(){
+    if($('#input-clase').val() == 'Moto'){
+       $('#div-tipo').hide(); 
+    }else{
+        $('#div-tipo').show(); 
+    }
 }

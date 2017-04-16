@@ -894,7 +894,6 @@ function inputIcompleto(extra) {
 
 
 function siguienteAjustar() {
-
 	solicitud.latDestino = mapas.Destino.getCenter().lat();
 	solicitud.lngDestino = mapas.Destino.getCenter().lng();
 

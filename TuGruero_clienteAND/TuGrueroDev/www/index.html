@@ -275,7 +275,7 @@
 					<div class="grid grid-pad urow uib_row_53" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_91 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_11 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-enviar">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_11 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-enviar">Siguiente0 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button><span class="uib_shim"></span>
 							</div>
 						</div>
@@ -317,7 +317,7 @@
 					<div class="grid grid-pad urow uib_row_55" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_93 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_19 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-carga-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_19 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-carga-next">Siguiente1 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -330,15 +330,36 @@
 						<div class="col uib_col_60 single-col" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
 								<div class="table-thing widget uib_w_196 ancho-mas-inputs label-textos input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-									<label class="narrow-control label-inline" for="estado-input">Nombres</label>
-									<input class="wide-control form-control default" type="text" placeholder="..." id="input-nombres" data-uib="twitter%20bootstrap/input">
+									<label class="narrow-control label-inline" for="input-nombres">Nombres</label>
+                                                                        <input class="wide-control form-control default" type="text" placeholder="" id="input-nombres" data-uib="twitter%20bootstrap/input" maxlength="40">
 								</div>
 
 								<div class="table-thing widget uib_w_108 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-									<label class="narrow-control label-inline" for="input-ciudad">Apellidos</label>
-									<input class="wide-control form-control default" type="text" id="input-apellidos" placeholder="...">
+									<label class="narrow-control label-inline" for="input-apellidos">Apellidos</label>
+									<input class="wide-control form-control default" type="text" id="input-apellidos" placeholder="" maxlength="40">
 								</div>
-								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                                            	<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+									<label class="narrow-control label-inline" for="input-clase">Clase</label>
+									<!--<input class="wide-control form-control default" type="text" id="input-marca" placeholder="...">-->
+                                                                        <select id="input-clase" class="wide-control form-control default input-padd">        
+                                                                            <option value="Automóvil">Automóvil</option>
+                                                                            <option value="Camioneta">Camioneta</option>
+                                                                            <option value="Moto">Moto</option>
+                                                                        </select>
+								</div>
+                                                            	<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1" id="div-tipo">
+									<label class="narrow-control label-inline" for="input-tipo">Tipo</label>
+									<!--<input class="wide-control form-control default" type="text" id="input-marca" placeholder="...">-->
+                                                                        <select id="input-tipo" class="wide-control form-control default input-padd">        
+                                                                            <option value="Coupé">Coupé</option>
+                                                                            <option value="Cross Over">Cross Over</option>
+                                                                            <option value="Pick Up">Pick Up</option>
+                                                                            <option value="Rústico">Rústico</option>
+                                                                            <option value="Sedán">Sedán</option>
+                                                                            <option value="Sport Wagon">Sport Wagon</option>
+                                                                        </select>
+								</div>
+                                                                <div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
 									<label class="narrow-control label-inline" for="input-zona">Marca</label>
 									<!--<input class="wide-control form-control default" type="text" id="input-marca" placeholder="...">-->
                                                                         <select id="input-marca" class="wide-control form-control default input-padd">        
@@ -410,7 +431,7 @@
 								</div>
 								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
 									<label class="narrow-control label-inline" for="input-zona">Modelo</label>
-									<input class="wide-control form-control default" type="text" id="input-modelo" placeholder="...">
+									<input class="wide-control form-control default" type="text" id="input-modelo" placeholder="" maxlength="25">
 								</div>
 								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
 									<label class="narrow-control label-inline" for="input-zona">Año</label>
@@ -419,7 +440,7 @@
                                                                 </div>
 								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
 									<label class="narrow-control label-inline" for="input-zona">Color</label>
-									<input class="wide-control form-control default" type="text" id="input-color" placeholder="...">
+									<input class="wide-control form-control default" type="text" id="input-color" placeholder="" maxlength="20">
 								</div>                                                            
 								<span class="uib_shim"></span>
 							</div>
@@ -428,7 +449,7 @@
 					<div class="grid grid-pad urow uib_row_83" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_125 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_123 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-creapoliza">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_123 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-creapoliza">Siguiente2 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button><span class="uib_shim"></span>
 							</div>
 						</div>
@@ -623,7 +644,7 @@
 					<div class="grid grid-pad urow uib_row_57" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_95 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_33 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-cat-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_33 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-cat-next">Siguiente3 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -658,7 +679,7 @@
 					<div class="grid grid-pad urow uib_row_58" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_96 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_51 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-cuneta-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_51 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-cuneta-next">Siguiente4 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -704,7 +725,7 @@
 					<div class="grid grid-pad urow uib_row_60" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_98 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_47 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-taxi-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_47 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-taxi-next">Siguiente5 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -749,7 +770,7 @@
 					<div class="grid grid-pad urow uib_row_62" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_100 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_56 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-encender-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_56 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-encender-next">Siguiente6 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -790,7 +811,7 @@
 					<div class="grid grid-pad urow uib_row_63" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_101 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_65 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-quetiene-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_65 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-quetiene-next">Siguiente7 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -852,7 +873,7 @@
 					<div class="grid grid-pad urow uib_row_81" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_123 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_68 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-choque-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_68 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-choque-next">Siguiente8 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button><span class="uib_shim"></span>
 							</div>
 						</div>
@@ -891,7 +912,7 @@
 					<div class="grid grid-pad urow uib_row_81" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_123 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_68 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-otrafalla-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_68 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-otrafalla-next">Siguiente9 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button><span class="uib_shim"></span>
 							</div>
 						</div>
@@ -942,7 +963,7 @@
 					<div class="grid grid-pad urow uib_row_67" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_106 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_77 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-cauchos-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_77 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-cauchos-next">Siguiente10 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -988,7 +1009,7 @@
 					<div class="grid grid-pad urow uib_row_69" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_108 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_98 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-cambiollanta-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_98 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-cambiollanta-next">Siguiente11 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -1027,7 +1048,7 @@
 					<div class="grid grid-pad urow uib_row_70" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_109 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_91 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-masdetalles-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_91 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-masdetalles-next">Siguiente12 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -1067,7 +1088,7 @@
 					<div class="grid grid-pad urow uib_row_71" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_110 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_83 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-detalles-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_83 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-detalles-next">Siguiente13 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -1121,7 +1142,7 @@
 					<div class="grid grid-pad urow uib_row_72" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_111 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_104 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-enviar-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_104 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-enviar-next">Siguiente14 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -1171,7 +1192,7 @@
 					<div class="grid grid-pad urow uib_row_74" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_113 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_111 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-destino-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_111 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-destino-next">Siguiente15 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -1299,7 +1320,7 @@
 					<div class="grid grid-pad urow uib_row_75" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_114 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_117 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-ajustar-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_117 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-ajustar-next">Siguiente001 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>
@@ -2217,7 +2238,7 @@
 					<div class="grid grid-pad urow uib_row_45" data-uib="layout/row" data-ver="0">
 						<div class="col uib_col_84 col-0_12-12" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
-								<button class="btn widget uib_w_146 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-rating-next">Siguiente <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+								<button class="btn widget uib_w_146 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-rating-next">Siguiente01 <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
 								</button>
 								<span class="uib_shim"></span>
 							</div>

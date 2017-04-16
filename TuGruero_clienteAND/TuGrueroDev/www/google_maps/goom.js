@@ -72,7 +72,7 @@ function reloadGoogleMaps(callback) {
 	});
 
 	jqxhr.fail(function (jqXHR, textStatus) {
-		console.log(textStatus);
+		//console.log(textStatus);
 		jqxhr.abort();
 		var parametros = {
 			"popup": "pop-generic",
@@ -142,14 +142,14 @@ function MakeDestino(myLatlng) {
 function MakeTrayecto() {
 	if (typeof google === 'object' && typeof google.maps === 'object') {
 
-		console.log(solicitud);
+		//console.log(solicitud);
 		carrolatlng = new google.maps.LatLng(solicitud.latOrigen, solicitud.lngOrigen);
 		grualatlng = new google.maps.LatLng(solicitud.latDestino, solicitud.lngDestino);
 
 		gpsMarcadores.Origen = carrolatlng;
 		gpsMarcadores.Grua = grualatlng;
 
-		console.log(datos.Latitud, datos.Longitud);
+		//console.log(datos.Latitud, datos.Longitud);
 		if (mapas.Trayecto === null) {
 			mapas.Trayecto = makeMapa("mapatrayecto", gpsMarcadores.Origen);
 
@@ -176,7 +176,7 @@ function makeMapa(mID, mlatlng) {
 	var mapOptions = {};
 	mapOptions.zoom = 15;
 	mapOptions.center = mlatlng;
-	console.log("REVERTIR");
+	//console.log("REVERTIR");
 	mapOptions.disableDefaultUI = true;
 	mapOptions.mapTypeId = google.maps.MapTypeId.ROADMAP;
 
@@ -193,7 +193,7 @@ function UbicarEnMapa(mapa, mLatlng) {
 
 function refreshGruaPos() {
 	mapa = mapas.Trayecto;
-	console.log("newCall");
+	//console.log("newCall");
 	gpsMarcadores.Grua = grualatlng;
 	//markTrayecto[1].setPosition(gpsMarcadores.Grua);
 
@@ -304,7 +304,7 @@ function reverseGeoDestino(mLatlng) {
 		lat: mapas.Destino.getCenter().lat(),
 		lng: mapas.Destino.getCenter().lng()
 	};
-	console.log(latlng);
+	//console.log(latlng);
 
 	geocoder.geocode({
 		'location': latlng
@@ -314,9 +314,9 @@ function reverseGeoDestino(mLatlng) {
 //var success = function (resultado,status){ //Delegado
 function success(resultado, status) {
 
-	console.log("QUIEN LLAMA");
+	//console.log("QUIEN LLAMA");
 	if (status === google.maps.GeocoderStatus.OK) {
-		console.log(resultado);
+		//console.log(resultado);
 		//var mDir;
 		var mEstate;
 		for (var i = 0; i < resultado.length; i++) {
@@ -325,7 +325,7 @@ function success(resultado, status) {
 			//mDir = resultado[i].formatted_address;
 
 			for (var j = 0; j < resultado[i].types.length; j++) {
-				console.log(resultado[i].types[j]);
+				//console.log(resultado[i].types[j]);
 				if (resultado[i].types[j] === "administrative_area_level_1")
 					mEstate = resultado[i].address_components[0].long_name;
 			}
@@ -339,11 +339,11 @@ function success(resultado, status) {
 			mEstate = 'indeterminado';
 
 		solicitud.EstadoOrigen = mEstate;
-		console.log(mEstate);
+		//console.log(mEstate);
 		//reemplazar(mDir, mEstate);
 	} else {
 		//reemplazar(document.getElementById("popup"));
-		console.log("ERROR");
+		//console.log("ERROR");
 	}
 }
 
@@ -390,12 +390,12 @@ function successDestino(resultado, status) {
 	if (status === google.maps.GeocoderStatus.OK) {
 		var mDir;
 		var mEstate;
-		console.log(resultado);
+		//console.log(resultado);
 		for (var i = 0; i < resultado.length; i++) {
 			if (resultado[i].types[0] === "route" || resultado[i].types[0] === "street_address") {
 				mDir = resultado[i].formatted_address;
 				for (var j = 0; j < resultado[i].address_components.length; j++) {
-					console.log(resultado[i].address_components[j]);
+					//console.log(resultado[i].address_components[j]);
 					for (var k = 0; k < resultado[i].address_components[j].types.length; k++) {
 
 						if (resultado[i].address_components[j].types[k] === "administrative_area_level_1")
@@ -409,20 +409,20 @@ function successDestino(resultado, status) {
 				mEstate = "Distrito Capital";
 
 		}
-		console.log(mEstate);
+		//console.log(mEstate);
 		var elEstado = mEstate.toLowerCase();
 		elEstado = removeDiacritics(elEstado);
 		var miEstado = JSON.parse(localStorage.misDatos).DireccionEDO.toLowerCase();
 		miEstado = removeDiacritics(miEstado);
 
-		console.log(mDir + ":" + mEstate);
+		//console.log(mDir + ":" + mEstate);
 
 		if (elEstado === miEstado || elEstado === undefined) {
 			console.log("normal");
 			ajusteDone();
 			
 		} else if (miEstado === "miranda" && elEstado === "distrito capital") {
-			console.log("postajuste");
+			//console.log("postajuste");
 			ajusteDone();
 
 		} else {
@@ -449,7 +449,7 @@ function setAddress() {
 		(sectorVal === "") ? alert("Coloque el sector al cual se dirige") : "OK";
 
 	if (OK === "OK") {
-		console.log("Geocoder");
+		//console.log("Geocoder");
 		geocoderAddres("Venezuela," + estadoVal + "," + localidadVal + "," + sectorVal);
 	}
 }
@@ -465,9 +465,9 @@ function geocodeSucces(results, status) {
 
 	var parametros = {};
 	if (status === google.maps.GeocoderStatus.OK) {
-		console.log(results);
+		//console.log(results);
 		destinoLatlng = results[0].geometry.location;
-		console.log(destinoLatlng);
+		//console.log(destinoLatlng);
 
 		makeMapa("mapadestino", results[0].geometry.location);
 		MakeDestino(results[0].geometry.location);
