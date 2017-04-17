@@ -2077,71 +2077,91 @@
 					</div>
 				</div>
 
-				<div id="mercadopago" class="upage-content vertical-col left hidden">
+				<div id="mercadopago" class="upage-content vertical-col left">
+                                    <form action="" method="post" id="pay" name="pay" class="">
+                                        <div class="widget uib_w_105 subtitulos-text subtitulo-margen alto-subtitulos" data-uib="media/text" data-ver="0">
+						<div class="widget-container left-receptacle"></div>
+						<div class="widget-container right-receptacle"></div>
+						<div>
+							<p>Efectuar pago</p>
+						</div>
+					</div>
+                                       
 
-					<form action="" method="post" id="pay" name="pay" class="">
-						<div class="table-thing widget uib_w_8 label-textos ancho-inputs d-margins input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-							<label class="narrow-control label-inline" for="placa">Correo electrónico</label>
-							<input class="wide-control form-control default" type="email" placeholder="tucorreo@mail.com" id="email" value="deandrademarcos@hotmail.com">
-						</div>
-						<div class="table-thing widget uib_w_8 label-textos ancho-inputs d-margins input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-							<label class="narrow-control label-inline" for="cardNumber">Número de tarjeta</label>
-							<input class="wide-control form-control default" type="number" placeholder="" id="cardNumber" data-checkout="cardNumber" value="4966382331109310">
-						</div>
-						<div class="table-thing widget uib_w_8 label-textos ancho-inputs d-margins input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-							<label class="narrow-control label-inline" for="securityCode">Código de seguridad</label>
-							<input class="wide-control form-control default" type="number" placeholder="" id="securityCode" data-checkout="securityCode" value="123">
-						</div>
-						<div class="table-thing widget uib_w_8 label-textos ancho-inputs d-margins input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-							<label class="narrow-control label-inline" for="cardExpirationYear">Fecha de vencimiento</label>
-							<select class="wide-control form-control default" id="cardExpirationYear" name="cardExpirationYear" data-checkout="cardExpirationYear">
-								<option>Año</option>
-								<option value="17">17</option>
-								<option value="18">18</option>
-								<option value="19">19</option>
-								<option value="20">20</option>
-								<option value="21">21</option>
-								<option value="22">22</option>
-							</select>
-							<select class="wide-control form-control default" id="cardExpirationMonth" name="cardExpirationMonth" data-checkout="cardExpirationMonth">
-								<option>Mes</option>
-								<option value="01">01</option>
-								<option value="02">02</option>
-								<option value="03">03</option>
-								<option value="04">04</option>
-								<option value="05">05</option>
-								<option value="06">06</option>
-								<option value="07">07</option>
-								<option value="08">08</option>
-								<option value="09">09</option>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-							</select>
+                                      
+					<div class="well no_wrap  widget uib_w_106 d-margins well-lg" data-uib="twitter%20bootstrap/well" data-ver="1">
+						<div class="col uib_col_60 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+								<div class="table-thing widget uib_w_108 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                                                                <label class="narrow-control label-inline" for="email">Correo electrónico</label>
+                                                                                <input class="wide-control form-control default" type="text" placeholder="tucorreo@mail.com" id="email" value="deandrademarcos@hotmail.com">
+								</div>
 
-						</div>
-						<div class="table-thing widget uib_w_8 label-textos ancho-inputs d-margins input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-							<label class="narrow-control label-inline" for="cardholderName">Titular</label>
-							<input class="wide-control form-control default" type="text" placeholder="" id="cardholderName" data-checkout="cardholderName" value="APRO">
-						</div>
-						<div class="table-thing widget uib_w_8 label-textos ancho-inputs d-margins input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-							<label class="narrow-control label-inline" for="docType">Tipo documento</label>
-							<select id="docType" data-checkout="docType" class="wide-control form-control default"></select>
-						</div>
-						<div class="table-thing widget uib_w_8 label-textos ancho-inputs d-margins input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-							<label class="narrow-control label-inline" for="docNumber">Número documento</label>
-							<input class="wide-control form-control default" type="text" placeholder="" id="docNumber" data-checkout="docNumber" value="12345678">
-						</div>
-						<div class="widget-container content-area vertical-col">
-							<button class="btn widget uib_w_146 boton-base-texto btn-base Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-efectuarpago" type="submit">Pagar <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
-							</button>
-							<span class="uib_shim"></span>
-						</div>
-					</form>
-				</div>
-			</div>
+								<div class="table-thing widget uib_w_108 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                                                                <label class="narrow-control label-inline" for="cardNumber">Número de tarjeta</label>
+                                                                                <input class="wide-control form-control default" type="number" placeholder="" id="cardNumber" data-checkout="cardNumber" value="4966382331109310">
+								</div>
+								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                                                                <label class="narrow-control label-inline" for="securityCode">Código de seguridad</label>
+                                                                                <input class="wide-control form-control default" type="number" placeholder="" id="securityCode" data-checkout="securityCode" value="123">
+								</div>
+								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                                                                <label class="narrow-control label-inline" for="cardExpirationYear">Fecha de vencimiento</label>
+                                                                                <select class="wide-control form-control default" id="cardExpirationYear" name="cardExpirationYear" data-checkout="cardExpirationYear">
+                                                                                        <option value="">Año</option>
+                                                                                        <option value="17">17</option>
+                                                                                        <option value="18">18</option>
+                                                                                        <option value="19">19</option>
+                                                                                        <option value="20">20</option>
+                                                                                        <option value="21">21</option>
+                                                                                        <option value="22">22</option>
+                                                                                </select>
+                                                                                <select class="wide-control form-control default" id="cardExpirationMonth" name="cardExpirationMonth" data-checkout="cardExpirationMonth">
+                                                                                        <option value="">Mes</option>
+                                                                                        <option value="01">01</option>
+                                                                                        <option value="02">02</option>
+                                                                                        <option value="03">03</option>
+                                                                                        <option value="04">04</option>
+                                                                                        <option value="05">05</option>
+                                                                                        <option value="06">06</option>
+                                                                                        <option value="07">07</option>
+                                                                                        <option value="08">08</option>
+                                                                                        <option value="09">09</option>
+                                                                                        <option value="10">10</option>
+                                                                                        <option value="11">11</option>
+                                                                                        <option value="12">12</option>
+                                                                                </select>
 
-		</div>
+								</div>
+								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                                                                <label class="narrow-control label-inline" for="cardholderName">Titular</label>
+                                                                                <input class="wide-control form-control default" type="text" placeholder="" id="cardholderName" data-checkout="cardholderName" value="APRO">
+								</div>
+								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                                                                <label class="narrow-control label-inline" for="docType">Tipo documento</label>
+                                                                                <select id="docType" data-checkout="docType" class="wide-control form-control default"></select>
+								</div>
+								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                                                                <label class="narrow-control label-inline" for="docNumber">Número documento</label>
+                                                                                <input class="wide-control form-control default" type="text" placeholder="" id="docNumber" data-checkout="docNumber" value="12345678">
+								</div>
+
+								<span class="uib_shim"></span>
+							</div>
+						</div>
+
+					</div>
+						<div class="col uib_col_60 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+                                                                <div class="widget-container content-area vertical-col">
+                                                                    <button class="btn widget uib_w_123 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-efectuarpago" type="submit">Pagar <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+                                                                    </button>
+                                                                    <span class="uib_shim"></span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                    </form>  
+                                </div>
 		<div class="upage hidden fondo-encuesta" id="Encuesta">
 			<div class="upage-outer content-area vertical-col left">
 				<div class="uib-header header-bg container-group inner-element uib_w_3 encabezado-size uib-header-fixed" data-uib="layout/header" data-ver="0">

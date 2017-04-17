@@ -73,24 +73,52 @@ Mercadopago.getIdentificationTypes();
                         function sdkResponseHandler(status, response) {
                             
 
-                        
-                        
-                        
+                            if($('#email').val().length==0)
+                            {
+                                muestraError("<p><h3>Error con los datos indicados</h3></p></p>Verifique el correo electrónico</p>");
+                                return false;
+                            }
+                            if($('#cardNumber').val().length==0)
+                            {
+                                muestraError("<p><h3>Error con los datos indicados</h3></p></p>Verifique el Número de tarjeta</p>");
+                                return false;
+                            }
+                            if($('#securityCode').val().length==0)
+                            {
+                                muestraError("<p><h3>Error con los datos indicados</h3></p></p>Verifique el Código de seguridad</p>");
+                                return false;
+                            }
+                            if($('#cardExpirationYear').val().length==0)
+                            {
+                                muestraError("<p><h3>Error con los datos indicados</h3></p></p>Verifique el Año de vencimiento</p>");
+                                return false;
+                            }
+
+                            if($('#cardExpirationMonth').val().length==0)
+                            {
+                                muestraError("<p><h3>Error con los datos indicados</h3></p></p>Verifique el Mes de vencimiento</p>");
+                                return false;
+                            }
+                            if($('#cardholderName').val().length==0)
+                            {
+                                muestraError("<p><h3>Error con los datos indicados</h3></p></p>Verifique el Titular</p>");
+                                return false;
+                            }
+                            if($('#docType').val().length==0)
+                            {
+                                muestraError("<p><h3>Error con los datos indicados</h3></p></p>Verifique el Tipo de documento</p>");
+                                return false;
+                            }
+                            if($('#docNumber').val().length==0)
+                            {
+                                muestraError("<p><h3>Error con los datos indicados</h3></p></p>Verifique el Número de documento</p>");
+                                return false;
+                            }
                             if (status != 200 && status != 201) {
                                 console.log("verify filled data");
                                 console.log(status + response);
-                        var parametros = {
-                                "popup": "pop-generic",
-                                "imagen": "Alto",
-                                "mensaje": "<p><h3>Error con los datos indicados</h3></p></p>Verifique e intente nuevamente (error:"+status+")<p>",
-                                "displaybarra": ['none'],
-                                "displaysBotones": ['none', 'none', 'inline', 'none'],
-                                "text": ['', '', 'Cerrar', ''],
-                                //"onClick": ["", "", "", "mostrarTaxi()"]
-                                "onClick": ["", "", "closePops()", ""]
+                                muestraError("<p><h3>Error con los datos indicados</h3></p></p>Verifique e intente nuevamente</p>");
 
-                        };
-                        genericPop(parametros);
                             }else{
 
 
@@ -111,4 +139,17 @@ Mercadopago.getIdentificationTypes();
                             }
                         };
      
+function muestraError(mensaje){
+                            var parametros = {
+                                "popup": "pop-generic",
+                                "imagen": "Alto",
+                                "mensaje": mensaje,
+                                "displaybarra": ['none'],
+                                "displaysBotones": ['none', 'none', 'inline', 'none'],
+                                "text": ['', '', 'Cerrar', ''],
+                                //"onClick": ["", "", "", "mostrarTaxi()"]
+                                "onClick": ["", "", "closePops()", ""]
 
+                        };
+                        genericPop(parametros);
+}

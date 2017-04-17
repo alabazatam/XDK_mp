@@ -39,7 +39,7 @@ var mColor = {
 	Invalido: "Color inválido",
 };
 var mNumero = {
-		Vacio: "Debe ingresar un número telefónico para poder solicitar una grúa.",
+	Vacio: "Debe ingresar un número telefónico para poder solicitar una grúa.",
 	Invalido: "Número inválido. Asegúrese de ingresar el prefijo de su operadora o código de área. Todo el número debe contener 11 dígitos.",
 	Signo: "Número inválido. No ingrese letras, espacios en blanco y/o caracteres especiales (+ - .)",
 	Letras: "Número inválido. No ingrese letras, espacios en blanco y/o caracteres especiales (+ - .)"
