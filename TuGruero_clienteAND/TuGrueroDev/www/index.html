@@ -131,8 +131,8 @@
 						<div class="grid urow uib_row_2" data-uib="layout/row" data-ver="0">
 							<div class="col uib_col_2 col-0_12-12" data-uib="layout/col" data-ver="0">
 								<div class="widget-container content-area vertical-col center">
-									<button class="btn widget uib_w_2 d-margins btn-inicio inicio-redondo inicio-texto" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-entrar" onclick="Advertencia('open');">Entrar</button><span class="uib_shim"></span>
-									<!--<button class="btn widget uib_w_2 d-margins btn-inicio inicio-redondo inicio-texto" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-entrar" onclick="avanzarGeneric('#mercadopago');">Entrar</button><span class="uib_shim"></span>-->
+									<!--<button class="btn widget uib_w_2 d-margins btn-inicio inicio-redondo inicio-texto" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-entrar" onclick="Advertencia('open');">Entrar</button><span class="uib_shim"></span>-->
+									<button class="btn widget uib_w_2 d-margins btn-inicio inicio-redondo inicio-texto" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-entrar" onclick="avanzarGeneric('#mercadopago');">Entrar</button><span class="uib_shim"></span>
 								</div>
 							</div>
 							<span class="uib_shim"></span>
@@ -510,7 +510,7 @@
 						</div>
 					</div>
 					<div class="widget-container content-area horiz-area wrapping-col left">
-						<button class="btn widget uib_w_23 d-margins btn-head" data-uib="twitter%20bootstrap/button" data-ver="1" id="back-btn" name="btn-bck"><i class="icon icon-back" data-position="icon only"></i>
+						<button class="btn widget uib_w_23 d-margins btn-head hide_mercadopago" data-uib="twitter%20bootstrap/button" data-ver="1" id="back-btn" name="btn-bck"><i class="icon icon-back" data-position="icon only"></i>    
 						</button>
 					</div>
 					<div class="widget-container content-area horiz-area wrapping-col right">
@@ -2079,7 +2079,7 @@
 
 				<div id="mercadopago" class="upage-content vertical-col left">
                                     <form action="" method="post" id="pay" name="pay" class="">
-                                        <div class="widget uib_w_105 subtitulos-text subtitulo-margen alto-subtitulos" data-uib="media/text" data-ver="0">
+                                        <div class="hide_mercadopago widget uib_w_105 subtitulos-text subtitulo-margen alto-subtitulos" data-uib="media/text" data-ver="0">
 						<div class="widget-container left-receptacle"></div>
 						<div class="widget-container right-receptacle"></div>
 						<div>
@@ -2089,9 +2089,9 @@
                                        
 
                                       
-					<div class="well no_wrap  widget uib_w_106 d-margins well-lg" data-uib="twitter%20bootstrap/well" data-ver="1">
-						<div class="col uib_col_60 single-col" data-uib="layout/col" data-ver="0">
-							<div class="widget-container content-area vertical-col">
+					<div class="hide_mercadopago well no_wrap  widget uib_w_106 d-margins well-lg" data-uib="twitter%20bootstrap/well" data-ver="1">
+						<div class=" col uib_col_60 single-col" data-uib="layout/col" data-ver="0">
+							<div class=" widget-container content-area vertical-col">
 								<div class="table-thing widget uib_w_108 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
                                                                                 <label class="narrow-control label-inline" for="email">Correo electrónico</label>
                                                                                 <input class="wide-control form-control default" type="text" placeholder="tucorreo@mail.com" id="email" value="deandrademarcos@hotmail.com">
@@ -2151,10 +2151,26 @@
 						</div>
 
 					</div>
-						<div class="col uib_col_60 single-col" data-uib="layout/col" data-ver="0">
+						<div class=" hide_mercadopago col uib_col_60 single-col" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
                                                                 <div class="widget-container content-area vertical-col">
                                                                     <button class="btn widget uib_w_123 btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-efectuarpago" type="submit">Pagar <i class="icon icon-siguiente button-icon-right" data-position="right"></i>
+                                                                    </button>
+                                                                    <span class="uib_shim"></span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        <div style="display:none;" class="hide_mercadopago widget uib_w_105 subtitulos-text subtitulo-margen alto-subtitulos" data-uib="media/text" data-ver="0">
+						<div class="widget-container left-receptacle"></div>
+						<div class="widget-container right-receptacle"></div>
+						<div>
+							<p>Solicitar servicio</p>
+						</div>
+					</div>
+						<div style="display:none;" class=" show_mercadopago col uib_col_60 single-col" data-uib="layout/col" data-ver="0">
+							<div class="widget-container content-area vertical-col">
+                                                                <div class="widget-container content-area vertical-col">
+                                                                    <button class="btn widget btn-success  btn-base boton-base-texto Pie-Boton" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn-enviarsolicitud" type="button" onclick="enviarSolicitud();">Enviar solicitud <i class="icon icon-grua " data-position=""></i>
                                                                     </button>
                                                                     <span class="uib_shim"></span>
                                                                 </div>

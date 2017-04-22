@@ -130,9 +130,21 @@ Mercadopago.getIdentificationTypes();
                                 card.setAttribute('value',response.id);
                                 form.appendChild(card);
                                 doSubmit=true;
-                                enviarSolicitud();
+                                //enviarSolicitud();
+                                $('.hide_mercadopago').hide();
+                                $('.show_mercadopago').show();
                                 //form.submit();
-                                
+                                var parametros = {
+                                        "popup": "pop-generic",
+                                        "imagen": "Asistir",
+                                        "mensaje": "Pago efectuado satisfactoriamente.",
+                                        "displaybarra": ['none'],
+                                        "displaysBotones": ['none', 'none', 'none', 'inline'],
+                                        "text": ['', '', '', 'Aceptar'],
+                                        "onClick": ["", "", "", "closePops()"]
+                                };
+
+                                genericPop(parametros);
 
                                 
                                 
