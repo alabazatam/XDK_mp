@@ -409,15 +409,21 @@ function successDestino(resultado, status) {
 				mEstate = "Distrito Capital";
 
 		}
-		//console.log(mEstate);
+		console.log(mEstate);
 		var elEstado = mEstate.toLowerCase();
 		elEstado = removeDiacritics(elEstado);
-		var miEstado = JSON.parse(localStorage.misDatos).DireccionEDO.toLowerCase();
-		miEstado = removeDiacritics(miEstado);
+        if(params.Asegurado =='SI'){
+            var miEstado = JSON.parse(localStorage.misDatos).DireccionEDO.toLowerCase();
+            miEstado = removeDiacritics(miEstado);  
+        }else{
+            var miEstado = $('#estado-input').val();
+            miEstado = removeDiacritics(miEstado);  
+        }
+
 
 		//console.log(mDir + ":" + mEstate);
 
-		if (elEstado === miEstado || elEstado === undefined) {
+		if (elEstado === miEstado || elEstado === undefined || params.Asegurado == 'NO') {
 			console.log("normal");
 			ajusteDone();
 			

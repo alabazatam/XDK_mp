@@ -31,6 +31,7 @@ var solicitud = {
     "latDestino": "",
     "lngDestino": "",
     "Direccion": "",
+    "DireccionEDO": "",
     "CellContacto": "",
     "EstadoOrigen": "",
     "EstadoDestino": "",
@@ -145,7 +146,7 @@ function verificacion() {
 	params.Placa = $('#placa').val().toUpperCase().replace(/[^a-zA-Z0-9]/g, '');
 	params.Seguro = $('#seguro').val();
 
-        console.log(params.Asegurado);
+        //console.log(params.Asegurado);
         
         if(params.Asegurado == "SI"){
             var OK = cedulaCheck($('#cedula').val()) ? placaCheck(params.Placa, $('#placa').val()) ? seguroCheck(params.Seguro) ? preEnvio() : false : false : false;
@@ -158,14 +159,16 @@ function verificacion() {
 }
 function verificacionNuevaPoliza() {
         params.Marca = $('#input-marca').val();
+        localStorage.misDatos.Marca = params.Marca;
         params.Modelo = $('#input-modelo').val();
+        localStorage.misDatos.Modelo = params.Modelo;
         params.Nombres = $('#input-nombres').val();
         params.Apellidos = $('#input-apellidos').val();
         params.Color = $('#input-color').val();
         params.Anio = $('#input-anio').val();
         params.Clase = $('#input-clase').val();
         params.Tipo = $('#input-tipo').val();
-    console.log('crear poliza y luego efectuar el login');
+    //console.log('crear poliza y luego efectuar el login');
     var OK = nombresCheck($('#input-nombres').val()) ? apellidosCheck($('#input-apellidos').val()) ? marcaCheck($('#input-marca').val()) ? modeloCheck($('#input-modelo').val()) ? anioCheck($('#input-anio').val()) ? colorCheck($('#input-color').val()) ?  avanzarGeneric("#sub_cat") : false : false : false : false : false : false;
 
         
@@ -968,9 +971,17 @@ function enviarGPS() {
 		"onClick": ["", "", "", "closePops()"]
 	};
 	genericPop(parametros);
-
-	$('#estado-input').attr('placeholder', JSON.parse(localStorage.misDatos).DireccionEDO);
-
+        //console.log(DireccionEDO);
+	if(params.Asegurado == 'SI'){
+            console.log("Asegurado si");
+            $('#estado-input').attr('placeholder', JSON.parse(localStorage.misDatos).DireccionEDO);
+   
+        }else{
+            console.log("Asegurado no");
+            $('#estado-input').removeAttr('disabled');
+  
+        }
+        
 }
 
 
@@ -980,11 +991,21 @@ function siguienteDestino() {
 	var OK = (checkInput('#input-ciudad')) ? (checkInput('#input-zona')) ? true : inputIcompleto("Coloque su zona") : inputIcompleto("Coloque su ciudad");
 
 	if (OK) {
+            
+                
 		var mDir = "";
-		mDir = JSON.parse(localStorage.misDatos).DireccionEDO + ", ";
-		mDir += $('#input-ciudad').val() + ", ";
-		mDir += $('#input-zona').val();
-		solicitud.Direccion = mDir;
+		if(params.Asegurado == 'SI'){
+                    mDir = JSON.parse(localStorage.misDatos).DireccionEDO + ", ";
+                    mDir += $('#input-ciudad').val() + ", ";
+                    mDir += $('#input-zona').val();
+                    solicitud.Direccion = mDir; 
+                }else{
+                    mDir = $('#estado-input').val() + ", ";
+                    mDir += $('#input-ciudad').val() + ", ";
+                    mDir += $('#input-zona').val();
+                    solicitud.Direccion = mDir;
+                }
+
 
 		geocoderAddres(mDir);
 
@@ -1038,16 +1059,9 @@ function siguienteAjustar() {
         
 	mlatlng = new google.maps.LatLng(solicitud.latDestino, solicitud.lngDestino);
 	reverseGeoDestino(mlatlng);
-        //console.log("Destino"+ mlatlng);
-        /*console.log("LatOrigen" + solicitud.latOrigen);
-        console.log("LngOrigen" + solicitud.lngOrigen);
-        console.log("LatDestino" + solicitud.latDestino);
-        console.log("LngDestino" + solicitud.lngDestino);
-        console.log("Cedula" + params.Cedula);
-        console.log("hago el calculo de baremo");*/
         
         if(params.Asegurado=='NO' ){
-            console.log('Entro en Asegurado = NO');
+            //console.log('Entro en Asegurado = NO');
             getPrecio();
         }
             
@@ -1077,10 +1091,16 @@ function ajusteDone() {
 	var botones = document.getElementsByName('btn-add');
 	$(botones[1]).addClass('collapsed');
 	var textos = document.getElementById("reumen-textos").getElementsByTagName('p');
-	textos[0].innerHTML = params.Cedula;
-	textos[1].innerHTML = params.Placa;
-	textos[2].innerHTML = misDatos.Marca;
-	textos[3].innerHTML = misDatos.Modelo;
+        textos[0].innerHTML = params.Cedula;
+        textos[1].innerHTML = params.Placa;
+        if(params.Asegurado == 'SI'){
+            textos[2].innerHTML = misDatos.Marca;
+            textos[3].innerHTML = misDatos.Modelo;
+        }else{
+            textos[2].innerHTML = params.Marca;
+            textos[3].innerHTML = params.Modelo;
+        }
+
 	textos[4].innerHTML = parSolicitud.QueOcurre;
 	textos[5].innerHTML = solicitud.Direccion;
 	showResumen();
@@ -1088,15 +1108,28 @@ function ajusteDone() {
 }
 
 function ajusteError(mEstate) {
-	var parametros = {
-		"popup": "pop-generic",
-		"imagen": "Alto",
-		"mensaje": "La dirección de su destino (" + mEstate + ") tiene un Estado diferente al de su póliza (" + JSON.parse(localStorage.misDatos).DireccionEDO + "), por favor ajuste su destino antes de continuar.",
-		"displaybarra": ['none'],
-		"displaysBotones": ['none', 'none', 'none', 'inline'],
-		"text": ['', '', '', 'Aceptar'],
-		"onClick": ["", "", "", "closePops()"]
-	};
+    if(params.Asegurado == 'SI'){
+        var parametros = {
+            "popup": "pop-generic",
+            "imagen": "Alto",
+            "mensaje": "La dirección de su destino (" + mEstate + ") tiene un Estado diferente al de su póliza (" + JSON.parse(localStorage.misDatos).DireccionEDO + "), por favor ajuste su destino antes de continuar.",
+            "displaybarra": ['none'],
+            "displaysBotones": ['none', 'none', 'none', 'inline'],
+            "text": ['', '', '', 'Aceptar'],
+            "onClick": ["", "", "", "closePops()"]
+        };  
+    }else{
+        var parametros = {
+            "popup": "pop-generic",
+            "imagen": "Alto",
+            "mensaje": "La dirección de su destino (" + mEstate + ") tiene un Estado diferente al de su póliza",
+            "displaybarra": ['none'],
+            "displaysBotones": ['none', 'none', 'none', 'inline'],
+            "text": ['', '', '', 'Aceptar'],
+            "onClick": ["", "", "", "closePops()"]
+        };         
+    }
+
 
 	genericPop(parametros);
 
@@ -1317,7 +1350,7 @@ function validarPrecio(respuesta) {
 		datos.Precio = respuesta.Precio;
                 datos.PrecioFormateado = respuesta.PrecioFormateado;
                 $('#precio-input').val(datos.PrecioFormateado + " Bs");
-		console.log(datos.Precio);
+		//console.log(datos.Precio);
                 /*var parametros = {
                         "popup": "pop-generic",
                         "imagen": "Tarjeta",
