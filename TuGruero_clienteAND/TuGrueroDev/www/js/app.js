@@ -159,9 +159,9 @@ function verificacion() {
 }
 function verificacionNuevaPoliza() {
         params.Marca = $('#input-marca').val();
-        localStorage.misDatos.Marca = params.Marca;
+        //localStorage.misDatos.Marca = params.Marca;
         params.Modelo = $('#input-modelo').val();
-        localStorage.misDatos.Modelo = params.Modelo;
+        //localStorage.misDatos.Modelo = params.Modelo;
         params.Nombres = $('#input-nombres').val();
         params.Apellidos = $('#input-apellidos').val();
         params.Color = $('#input-color').val();
