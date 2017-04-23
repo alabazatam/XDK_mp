@@ -400,7 +400,7 @@ function verificarDatos() {
 
 
 function validarRespuesta(data) {
-	console.log(data);
+	//console.log(data);
 
 	if (data.Error === undefined) {
 
@@ -1035,16 +1035,24 @@ function siguienteAjustar() {
 
 	solicitud.latDestino = mapas.Destino.getCenter().lat();
 	solicitud.lngDestino = mapas.Destino.getCenter().lng();
-
+        
 	mlatlng = new google.maps.LatLng(solicitud.latDestino, solicitud.lngDestino);
 	reverseGeoDestino(mlatlng);
         //console.log("Destino"+ mlatlng);
-        console.log("LatOrigen" + solicitud.latOrigen);
+        /*console.log("LatOrigen" + solicitud.latOrigen);
         console.log("LngOrigen" + solicitud.lngOrigen);
         console.log("LatDestino" + solicitud.latDestino);
         console.log("LngDestino" + solicitud.lngDestino);
         console.log("Cedula" + params.Cedula);
-        console.log("hago el calculo de baremo");
+        console.log("hago el calculo de baremo");*/
+        
+        if(params.Asegurado=='NO' ){
+            console.log('Entro en Asegurado = NO');
+            getPrecio();
+        }
+            
+        
+        
 	var parametros = {
 		"popup": "pop-generic",
 		"imagen": "Casa",
@@ -1296,4 +1304,45 @@ function ocultaTipo(){
     }else{
         $('#div-tipo').show(); 
     }
+}
+function getPrecio() {
+
+	
+	AjaxCall("calculaPrecio.php", solicitud, validarPrecio, errorPrecio);
+
+}
+function validarPrecio(respuesta) {
+	//console.log("aaaaaaaaaaaaa" + respuesta);
+	if (respuesta.Precio !== 'null') {
+		datos.Precio = respuesta.Precio;
+                datos.PrecioFormateado = respuesta.PrecioFormateado;
+                $('#precio-input').val(datos.PrecioFormateado + " Bs");
+		console.log(datos.Precio);
+                /*var parametros = {
+                        "popup": "pop-generic",
+                        "imagen": "Tarjeta",
+                        "mensaje": "El monto a pagar es: " + datos.Precio + ", en la siguiente pantalla procederá a pagar.",
+                        "displaybarra": ['none'],
+                        "displaysBotones": ['none', 'none', 'none', 'inline'],
+                        "text": ['', '', '', 'Aceptar'],
+                        "onClick": ["", "", "", "closePops()"]
+                };
+
+                genericPop(parametros);*/
+
+	}
+}
+function errorPrecio(error) {
+	console.log(error);
+	var parametros = {
+		"popup": "pop-generic",
+		"imagen": "Error",
+		"mensaje": (error.readyState === 0) ? msn.ErrorConexion : error.statusText,
+		"displaybarra": ['none'],
+		"displaysBotones": ['none', 'none', 'none', 'inline'],
+		"text": ['', '', '', 'Aceptar'],
+		"onClick": ["", "", "", "closePops()"]
+	};
+
+	genericPop(parametros);
 }

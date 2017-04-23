@@ -2092,7 +2092,21 @@
 					<div class="hide_mercadopago well no_wrap  widget uib_w_106 d-margins well-lg" data-uib="twitter%20bootstrap/well" data-ver="1">
 						<div class=" col uib_col_60 single-col" data-uib="layout/col" data-ver="0">
 							<div class=" widget-container content-area vertical-col">
-								<div class="table-thing widget uib_w_108 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+								<div class="table-thing widget uib_w_196 ancho-mas-inputs label-textos input-padd diabled-text Estado-titulo-margen" data-uib="twitter%20bootstrap/input" data-ver="1">
+									<label class="narrow-control label-inline" for="precio-input">Costo del servicio</label>
+									<input class="wide-control form-control default" type="text" placeholder="" id="precio-input" disabled="" value="0.00 Bs">
+								</div>
+								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                                                                <label class="narrow-control label-inline" for="docType">Tipo documento</label>
+                                                                                <select id="docType" data-checkout="docType" class="wide-control form-control default"></select>
+                                                                                <label class="narrow-control label-inline" for="docNumber">Número documento</label>
+                                                                                <input class="wide-control form-control default" type="text" placeholder="" id="docNumber" data-checkout="docNumber" value="12345678">
+								</div>
+								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                                                                <label class="narrow-control label-inline" for="cardholderName">Titular</label>
+                                                                                <input class="wide-control form-control default" type="text" placeholder="" id="cardholderName" data-checkout="cardholderName" value="APRO">
+								</div>
+                                                                <div class="table-thing widget uib_w_108 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
                                                                                 <label class="narrow-control label-inline" for="email">Correo electrónico</label>
                                                                                 <input class="wide-control form-control default" type="text" placeholder="tucorreo@mail.com" id="email" value="deandrademarcos@hotmail.com">
 								</div>
@@ -2100,13 +2114,11 @@
 								<div class="table-thing widget uib_w_108 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
                                                                                 <label class="narrow-control label-inline" for="cardNumber">Número de tarjeta</label>
                                                                                 <input class="wide-control form-control default" type="number" placeholder="" id="cardNumber" data-checkout="cardNumber" value="4966382331109310">
-								</div>
-								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
                                                                                 <label class="narrow-control label-inline" for="securityCode">Código de seguridad</label>
                                                                                 <input class="wide-control form-control default" type="number" placeholder="" id="securityCode" data-checkout="securityCode" value="123">
 								</div>
 								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-                                                                                <label class="narrow-control label-inline" for="cardExpirationYear">Fecha de vencimiento</label>
+                                                                                <label class="narrow-control label-inline" for="cardExpirationYear">Vencimiento</label>
                                                                                 <select class="wide-control form-control default" id="cardExpirationYear" name="cardExpirationYear" data-checkout="cardExpirationYear">
                                                                                         <option value="">Año</option>
                                                                                         <option value="17">17</option>
@@ -2133,18 +2145,8 @@
                                                                                 </select>
 
 								</div>
-								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-                                                                                <label class="narrow-control label-inline" for="cardholderName">Titular</label>
-                                                                                <input class="wide-control form-control default" type="text" placeholder="" id="cardholderName" data-checkout="cardholderName" value="APRO">
-								</div>
-								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-                                                                                <label class="narrow-control label-inline" for="docType">Tipo documento</label>
-                                                                                <select id="docType" data-checkout="docType" class="wide-control form-control default"></select>
-								</div>
-								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-                                                                                <label class="narrow-control label-inline" for="docNumber">Número documento</label>
-                                                                                <input class="wide-control form-control default" type="text" placeholder="" id="docNumber" data-checkout="docNumber" value="12345678">
-								</div>
+
+
 
 								<span class="uib_shim"></span>
 							</div>
