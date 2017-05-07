@@ -62,8 +62,7 @@ Mercadopago.setPublishableKey("TEST-6d4e759f-3000-4816-bb77-45ce06df576e",'1');
 Mercadopago.getIdentificationTypes();
 
 $(document).ready(function(){
-      $('#thm_mp_cntnr').hide();
-  $('#meli_device').hide();
+
   Mercadopago.getIdentificationTypes();
 
   
@@ -133,6 +132,17 @@ $(document).ready(function(){
 
                         function doPay(event){
                             event.preventDefault();
+                            var parametros = {
+                            "popup": "pop-generic",
+                            "imagen": "Conectando",
+                            "mensaje": "Realizando pago espere un momento",
+                            "displaybarra": ['block'],
+                            "displaysBotones": ['none', 'none', 'none', 'inline'],
+                            "text": ['', '', '', 'Cerrar'],
+                            "onClick": ["", "", "", "closePops()"]
+                            };
+
+                            genericPop(parametros);
                             if(!doSubmit){
                                 var $form = document.querySelector('#pay');
                                 Mercadopago.createToken($form, sdkResponseHandler); // The function "sdkResponseHandler" is defined below
@@ -190,45 +200,25 @@ $(document).ready(function(){
                                 muestraError("<p><h3>Error con los datos indicados</h3></p></p>Verifique e intente nuevamente</p>");
 
                             }else{
-                            var parametros = {
-                            "popup": "pop-generic",
-                            "imagen": "Conectando",
-                            "mensaje": "Realizando pago espere un momento",
-                            "displaybarra": ['block'],
-                            "displaysBotones": ['none', 'none', 'none', 'none'],
-                            "text": ['', '', '', ''],
-                            "onClick": ["", "", "", ""]
-                            };
-                            /*var parametros = {
-                                    "popup": "popupInico",
-                                    "imagen": "Conectando",
-                                    "mensaje": "Por favor espere mientras se completa la operación.",
-                                    "displaybarra": ['block'],
-                                    "displaysBotones": ['none', 'none', 'inline', 'none'],
-                                    "text": ['', '', 'Abortar', ''],
-                                    "onClick": ["", "", "Abortar()", ""]
 
-                            };*/
-
-                            genericPop(parametros);
                                 
                                 var form = document.querySelector('#pay');
 
                                 var card = document.createElement('input');
                                 card.setAttribute('name',"token");
                                 card.setAttribute('id',"token");
-                                card.setAttribute('type',"text");
+                                card.setAttribute('type',"hidden");
                                 card.setAttribute('value',response.id);
                                 form.appendChild(card);
                                 var datos = $( "#pay" ).serialize();
                                 var token = $('#token').val();
                                 var precio = $('#precio').val();
-                                var descripcion = $('#descripcion').val();
+                                var descripcion = "Pago desde la APP";
                                 var email = $('#email').val();
                                 var paymentMethodId = $('#paymentMethodId').val();
                                 //doSubmit=true;
                                 $.ajax({
-                                   url: "https://tugruero.com/mercadopago/pagoServicioApp.php?token="+token +"&paymentMethodId=" + paymentMethodId + "&precio=" + precio + "&email=" + email + "&descripcion=" + descripcion,
+                                   url: "https://tugruero.com/mercadopago/pagoServicioApp.php?token="+token +"&paymentMethodId=" + paymentMethodId + "&precio=" + precio + "&email=" + email + "&descripcion=" + descripcion + "&Placa=" + params.Placa+ "&Nombres=" + params.Nombres+ "&Apellidos=" + params.Apellidos+ "&Clase=" + params.Clase+ "&Tipo=" + params.Tipo+ "&Marca=" + params.Marca+ "&Modelo=" + params.Modelo + "&Anio=" + params.Anio + "&Color=" + params.Color,
                                    data: response ,
                                    dataType: "json",
                                    error: function(response){
@@ -240,7 +230,8 @@ $(document).ready(function(){
 
                                             if(status =='approved'){
                                                   
-                                               
+                                                console.log("idMp"+data.response["id"]);
+                                                $('#idPagoMP').html("Número de comprobante de pago: " + data.response["id"]);
                                                 $('.hide_mercadopago').hide();
                                                 $('.show_mercadopago').show();
                                                 //form.submit();

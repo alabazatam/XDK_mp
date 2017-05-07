@@ -87,7 +87,8 @@ var btnTermino;
 
 //Administra la ventana de Adevertencia al inicio
 function Advertencia(accion) {
-
+        $('#thm_mp_cntnr').remove();
+        $('#meli_device').remove();
 	var mAccion = (accion === "open") ? function () {
 		$("#popupEntrar").modal("show");
 	} : function () {
@@ -692,7 +693,8 @@ function resetOpt() {
 
 
 function avanzarGeneric(subpagina, retroceder) {
-
+        $('#thm_mp_cntnr').remove();
+        $('#meli_device').remove();
 	if ((subpagina === "#v_carga") || (subpagina === "#sub_cat") || (subpagina === "#comentarios") || (subpagina === "#noasegurado")) {
 		var backs = document.getElementsByName('btn-bck');
 		for (var b = 0; b < backs.length; b++)
@@ -1350,7 +1352,7 @@ function validarPrecio(respuesta) {
 		datos.Precio = respuesta.Precio;
                 datos.PrecioFormateado = respuesta.PrecioFormateado;
                 $('#precio-input').val(datos.PrecioFormateado + " Bs");
-                $('#precio').val(datos.PrecioFormateado);
+                $('#precio').val(datos.Precio);
 		//console.log(datos.Precio);
                 /*var parametros = {
                         "popup": "pop-generic",
