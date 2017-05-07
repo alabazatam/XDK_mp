@@ -1352,7 +1352,7 @@ function validarPrecio(respuesta) {
 		datos.Precio = respuesta.Precio;
                 datos.PrecioFormateado = respuesta.PrecioFormateado;
                 $('#precio-input').val(datos.PrecioFormateado + " Bs");
-                $('#precio').val(datos.Precio);
+                //$('#precio').val(datos.Precio);
 		//console.log(datos.Precio);
                 /*var parametros = {
                         "popup": "pop-generic",
