@@ -135,7 +135,7 @@ $(document).ready(function(){
                             event.preventDefault();
                             var parametros = {
                             "popup": "pop-generic",
-                            "imagen": "Conectando",
+                            "imagen": "Tarjeta",
                             "mensaje": "Realizando pago espere un momento",
                             "displaybarra": ['block'],
                             "displaysBotones": ['none', 'none', 'none', 'none'],
@@ -238,7 +238,7 @@ $(document).ready(function(){
                                                 //form.submit();
                                                 var parametros = {
                                                 "popup": "pop-generic",
-                                                "imagen": "Asistir",
+                                                "imagen": "Check",
                                                 "mensaje": "Pago efectuado satisfactoriamente.",
                                                 "displaybarra": ['none'],
                                                 "displaysBotones": ['none', 'none', 'none', 'inline'],
