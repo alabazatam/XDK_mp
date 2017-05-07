@@ -57,9 +57,9 @@
     array_resultados["rejected"]["cc_rejected_other_reason"] = "No proceso el pago";
 
 
-//Mercadopago.setPublishableKey("APP_USR-220b371a-4b3b-45af-9441-137e0e3d7732");
+Mercadopago.setPublishableKey("APP_USR-220b371a-4b3b-45af-9441-137e0e3d7732");
 
-Mercadopago.setPublishableKey("TEST-6d4e759f-3000-4816-bb77-45ce06df576e");
+//Mercadopago.setPublishableKey("TEST-6d4e759f-3000-4816-bb77-45ce06df576e");
 //Mercadopago.getIdentificationTypes();
 
 $(document).ready(function(){
