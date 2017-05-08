@@ -57,9 +57,9 @@
     array_resultados["rejected"]["cc_rejected_other_reason"] = "No proceso el pago";
 
 
-Mercadopago.setPublishableKey("APP_USR-220b371a-4b3b-45af-9441-137e0e3d7732");
+//Mercadopago.setPublishableKey("APP_USR-220b371a-4b3b-45af-9441-137e0e3d7732");
 
-//Mercadopago.setPublishableKey("TEST-6d4e759f-3000-4816-bb77-45ce06df576e");
+Mercadopago.setPublishableKey("TEST-6d4e759f-3000-4816-bb77-45ce06df576e");
 //Mercadopago.getIdentificationTypes();
 
 $(document).ready(function(){
@@ -219,7 +219,7 @@ $(document).ready(function(){
                                 var paymentMethodId = $('#paymentMethodId').val();
                                 //doSubmit=true;
                                 $.ajax({
-                                   url: "https://tugruero.com/mercadopago/pagoServicioApp.php?token="+token +"&paymentMethodId=" + paymentMethodId + "&precio=" + precio + "&email=" + email + "&descripcion=" + descripcion + "&Placa=" + params.Placa+ "&Nombres=" + params.Nombres+ "&Apellidos=" + params.Apellidos+ "&Clase=" + params.Clase+ "&Tipo=" + params.Tipo+ "&Marca=" + params.Marca+ "&Modelo=" + params.Modelo + "&Anio=" + params.Anio + "&Color=" + params.Color,
+                                   url: "https://tugruero.com/mercadopago/pagoServicioAppDesa.php?token="+token +"&paymentMethodId=" + paymentMethodId + "&precio=" + precio + "&email=" + email + "&descripcion=" + descripcion + "&Placa=" + params.Placa+ "&Nombres=" + params.Nombres+ "&Apellidos=" + params.Apellidos+ "&Clase=" + params.Clase+ "&Tipo=" + params.Tipo+ "&Marca=" + params.Marca+ "&Modelo=" + params.Modelo + "&Anio=" + params.Anio + "&Color=" + params.Color,
                                    data: response ,
                                    dataType: "json",
                                    error: function(response){
@@ -228,7 +228,7 @@ $(document).ready(function(){
                                         if (typeof data.error == 'undefined') { 
                                             var status = data.response["status"];
                                             //alert('no es undefined');
-
+                                            console.log(data);
                                             if(status =='approved'){
                                                   
                                                 console.log("idMp"+data.response["id"]);
