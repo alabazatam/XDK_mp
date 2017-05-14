@@ -1209,7 +1209,7 @@ function muestraMensajePrepago (){
                 avanzarGeneric('#mercadopago');
                 var parametros = {
                         "popup": "pop-generic",
-                        "imagen": "Casa",
+                        "imagen": "Tarjeta",
                         "mensaje": msn.GruaMP,
                         "displaybarra": ['none'],
                         "displaysBotones": ['none', 'none', 'none', 'inline'],

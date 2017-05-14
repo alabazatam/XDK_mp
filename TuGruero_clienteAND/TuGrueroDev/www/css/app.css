@@ -213,4 +213,12 @@ body {
 li {
   color: ghostwhite; /* bullet color */
 }
+.texto_mp_precio {
+    color: #fff !important;
+    font-size: 20px !important;
+    text-align: left !important;
+    float: left !important;
+    width: 100%;
+    font-weight: bold !important;
+}
 
