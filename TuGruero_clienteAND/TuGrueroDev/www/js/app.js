@@ -977,8 +977,9 @@ function enviarGPS() {
         //console.log(DireccionEDO);
 	if(params.Asegurado == 'SI'){
             console.log("Asegurado si");
+            $("#estado-input").replaceWith('<input class="wide-control form-control default" type="text" placeholder="..." id="estado-input" disabled="">');
             $('#estado-input').attr('placeholder', JSON.parse(localStorage.misDatos).DireccionEDO);
-   
+
         }else{
             console.log("Asegurado no");
             $('#estado-input').removeAttr('disabled');
@@ -1017,8 +1018,16 @@ function enviarGPS() {
 
 
 function siguienteDestino() {
+        
+        if(params.Asegurado == 'SI'){
+            var OK = (checkInput('#input-ciudad')) ? (checkInput('#input-zona')) ? true  : inputIcompleto("Coloque su zona") : inputIcompleto("Coloque su ciudad");
 
-	var OK = (checkInput('#estado-input')) ? (checkInput('#input-ciudad')) ? (checkInput('#input-zona')) ? true  : inputIcompleto("Coloque su zona") : inputIcompleto("Coloque su ciudad"): inputIcompleto("Coloque su estado");
+        }
+        
+        if(params.Asegurado == 'NO'){
+            var OK = (checkInput('#estado-input')) ? (checkInput('#input-ciudad')) ? (checkInput('#input-zona')) ? true  : inputIcompleto("Coloque su zona") : inputIcompleto("Coloque su ciudad"): inputIcompleto("Coloque su estado");
+
+        }
 
 	if (OK) {
             
