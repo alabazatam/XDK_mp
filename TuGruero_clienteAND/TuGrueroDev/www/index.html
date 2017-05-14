@@ -243,9 +243,12 @@
 									<label class="narrow-control label-inline" for="placa">Placa</label>
 									<input class="wide-control form-control default" type="text" placeholder="ej. ABCD000" id="placa">
 								</div>
-								<div class="table-thing widget uib_w_8 label-textos ancho-inputs d-margins input-padd text-right" data-uib="twitter%20bootstrap/input" data-ver="1">
-									<button class="btn btn-success btn widget  btn-base" id="btn-asegurado">Asegurado</button>
-									<button class="btn btn-default btn widget  btn-base" id="btn-noasegurado">No asegurado</button>
+								<div class="table-thing widget uib_w_8 label-textos ancho-inputs d-margins input-padd text-center" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                                                    <br><br><br>
+                                                                        <button class="btn btn-success btn widget  btn-base btn-lg" id="btn-asegurado">&nbsp;&nbsp;Asegurado&nbsp;&nbsp;</button>
+                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<button class="btn btn-default btn widget  btn-base btn-lg" id="btn-noasegurado">No asegurado</button>
+                                                                    <br><br><br><br><br><br>
 								</div>
 								<div class="table-thing widget uib_w_10 label-textos ancho-inputs input-margen input-padd" data-uib="twitter%20bootstrap/select" data-ver="1" id="div_seguro">
 									<label class="narrow-control label-inline">Seguro</label>
@@ -325,18 +328,32 @@
 					</div>
 				</div>
 				<div id="noasegurado" class="upage-content vertical-col left hidden">
+					<div class="widget uib_w_5 subtitulos-text subtitulo-margen alto-subtitulos" data-uib="media/text" data-ver="0">
+						<div class="widget-container left-receptacle"></div>
+						<div class="widget-container right-receptacle"></div>
+						<div>
+							<p>Datos personales</p>
+						</div>
+					</div>
 					<div class="well no_wrap  widget uib_w_106 d-margins well-lg" data-uib="twitter%20bootstrap/well" data-ver="1">
 						<div class="col uib_col_60 single-col" data-uib="layout/col" data-ver="0">
 							<div class="widget-container content-area vertical-col">
 								<div class="table-thing widget uib_w_196 ancho-mas-inputs label-textos input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-									<label class="narrow-control label-inline" for="input-nombres">Nombres</label>
+									<label class="narrow-control label-inline" for="input-nombres">Nombre</label>
 									<input class="wide-control form-control default" type="text" placeholder="" id="input-nombres" data-uib="twitter%20bootstrap/input" maxlength="40">
 								</div>
 
 								<div class="table-thing widget uib_w_108 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
-									<label class="narrow-control label-inline" for="input-apellidos">Apellidos</label>
+									<label class="narrow-control label-inline" for="input-apellidos">Apellido</label>
 									<input class="wide-control form-control default" type="text" id="input-apellidos" placeholder="" maxlength="40">
 								</div>
+                                                                <div class="widget uib_w_5 subtitulos-text subtitulo-margen alto-subtitulos" data-uib="media/text" data-ver="0">
+                                                                        <div class="widget-container left-receptacle"></div>
+                                                                        <div class="widget-container right-receptacle"></div>
+                                                                        <div>
+                                                                                <p>Datos vehículo</p>
+                                                                        </div>
+                                                                </div>
 								<div class="table-thing widget uib_w_109 d-margins label-textos ancho-mas-inputs input-padd" data-uib="twitter%20bootstrap/input" data-ver="1">
 									<label class="narrow-control label-inline" for="input-clase">Clase</label>
 									<!--<input class="wide-control form-control default" type="text" id="input-marca" placeholder="...">-->
