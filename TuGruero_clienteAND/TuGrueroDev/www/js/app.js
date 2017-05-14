@@ -22,7 +22,7 @@ var params = {
     "Anio": "",
     "Color": "",
     "Clase": "",
-    "Tipo": ""
+    "Tipo": "N/A"
 };
 var solicitud = {
     "idPoliza": "",
@@ -51,7 +51,7 @@ var solicitud = {
     "Anio": "",
     "Color": "",
     "Clase": "",
-    "Tipo": ""
+    "Tipo": "N/A"
 };
 //Identificadores para desactivar botones de siguiente.
 var nextBtn = {
@@ -168,7 +168,7 @@ function verificacionNuevaPoliza() {
         params.Color = $('#input-color').val();
         params.Anio = $('#input-anio').val();
         params.Clase = $('#input-clase').val();
-        params.Tipo = $('#input-tipo').val();
+        //params.Tipo = $('#input-tipo').val();
     //console.log('crear poliza y luego efectuar el login');
     var OK = nombresCheck($('#input-nombres').val()) ? apellidosCheck($('#input-apellidos').val()) ? marcaCheck($('#input-marca').val()) ? modeloCheck($('#input-modelo').val()) ? anioCheck($('#input-anio').val()) ? colorCheck($('#input-color').val()) ?  avanzarGeneric("#sub_cat") : false : false : false : false : false : false;
 
@@ -695,6 +695,7 @@ function resetOpt() {
 function avanzarGeneric(subpagina, retroceder) {
         $('#thm_mp_cntnr').remove();
         $('#meli_device').remove();
+        console.log("subpagina = "+subpagina);
 	if ((subpagina === "#v_carga") || (subpagina === "#sub_cat") || (subpagina === "#comentarios") || (subpagina === "#noasegurado")) {
 		var backs = document.getElementsByName('btn-bck');
 		for (var b = 0; b < backs.length; b++)
@@ -703,12 +704,12 @@ function avanzarGeneric(subpagina, retroceder) {
 	//	if (myNextBtn) {
 	//		myNextBtn.attr('disabled', 'disabled');
 	//	}
-
 	if (subpagina !== "#resumen") {
 		//	console.log("D");
 		myNextBtn = $(nextBtn[subpagina]);
 		myNextBtn.attr('disabled', 'disabled');
 	}
+
 
 	//	console.log($(nextBtn[subpagina]), subpagina);
 	closePops();
@@ -981,6 +982,33 @@ function enviarGPS() {
         }else{
             console.log("Asegurado no");
             $('#estado-input').removeAttr('disabled');
+            $("#estado-input").replaceWith('<select id="estado-input" name="estado-input" class="wide-control form-control default input-lg">' +
+                  '<option value="">--</option>' +
+                  '<option value="Distrito Capital">Distrito Capital</option>' +
+                  '<option value="Amazonas">Amazonas</option>' +
+                  '<option value="Anzoátegui">Anzoátegui</option>' +
+                  '<option value="Apure">Apure</option>' +
+                  '<option value="Aragua">Aragua</option>' +
+                  '<option value="Barinas">Barinas</option>' +
+                  '<option value="Bolívar">Bolívar</option>' +
+                  '<option value="Carabobo">Carabobo</option>' +
+                  '<option value="Cojedes">Cojedes</option>' +
+                  '<option value="Delta amacuro">Delta amacuro</option>' +
+                  '<option value="Falcón">Falcón</option>' +
+                  '<option value="Guárico">Guárico</option>' +
+                  '<option value="Lara">Lara</option>' +
+                  '<option value="Mérida">Mérida</option>' +
+                  '<option value="Miranda">Miranda</option>' +
+                  '<option value="Monagas">Monagas</option>' +
+                  '<option value="Nueva esparta">Nueva esparta</option>' +
+                  '<option value="Portuguesa">Portuguesa</option>' +
+                  '<option value="Sucre">Sucre</option>' +
+                  '<option value="Táchira">Táchira</option>' +
+                  '<option value="Trujillo">Trujillo</option>' +
+                  '<option value="Vargas">Vargas</option>' +
+                  '<option value="Yaracuy">Yaracuy</option>' +
+                  '<option value="Zulia">Zulia</option>' +
+                '</select>');
   
         }
         
@@ -990,7 +1018,7 @@ function enviarGPS() {
 
 function siguienteDestino() {
 
-	var OK = (checkInput('#input-ciudad')) ? (checkInput('#input-zona')) ? true : inputIcompleto("Coloque su zona") : inputIcompleto("Coloque su ciudad");
+	var OK = (checkInput('#estado-input')) ? (checkInput('#input-ciudad')) ? (checkInput('#input-zona')) ? true  : inputIcompleto("Coloque su zona") : inputIcompleto("Coloque su ciudad"): inputIcompleto("Coloque su estado");
 
 	if (OK) {
             
@@ -1167,15 +1195,30 @@ function siguienteResumen(boton) {
                 
         }else{
             //enviar a pantalla de mercadopago
-            var OK = ($.isNumeric(cellphone)) ? (cellphone.indexOf('.') < 0) ? (cellphone.length === 11) ? (terminos === "Si") ? avanzarGeneric('#mercadopago') : numeroInvalido(msn.AceptarCondiciones) : numeroInvalido(mNumero.Invalido) : numeroInvalido(mNumero.Signo) : (cellphone.length === 0) ? numeroInvalido(mNumero.Vacio) : numeroInvalido(mNumero.Letras);
-    
+
+                
+            var OK = ($.isNumeric(cellphone)) ? (cellphone.indexOf('.') < 0) ? (cellphone.length === 11) ? (terminos === "Si") ? muestraMensajePrepago() : numeroInvalido(msn.AceptarCondiciones) : numeroInvalido(mNumero.Invalido) : numeroInvalido(mNumero.Signo) : (cellphone.length === 0) ? numeroInvalido(mNumero.Vacio) : numeroInvalido(mNumero.Letras);
+                
         }
 
 
     
 }
 
-
+function muestraMensajePrepago (){
+                avanzarGeneric('#mercadopago');
+                var parametros = {
+                        "popup": "pop-generic",
+                        "imagen": "Casa",
+                        "mensaje": msn.GruaMP,
+                        "displaybarra": ['none'],
+                        "displaysBotones": ['none', 'none', 'none', 'inline'],
+                        "text": ['', '', '', 'Aceptar'],
+                        "onClick": ["", "", "", "closePops()"]
+                };
+                genericPop(parametros);
+    
+}
 
 function numeroInvalido(extra) {
 
@@ -1351,7 +1394,7 @@ function validarPrecio(respuesta) {
 	if (respuesta.Precio !== 'null') {
 		datos.Precio = respuesta.Precio;
                 datos.PrecioFormateado = respuesta.PrecioFormateado;
-                $('#precio-input').val(datos.PrecioFormateado + " Bs");
+                $('#precio-input').html("<b class='text-left'> Bs. " + datos.PrecioFormateado + "</b>");
                 //$('#precio').val(datos.Precio);
 		//console.log(datos.Precio);
                 /*var parametros = {

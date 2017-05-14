@@ -6,7 +6,8 @@ var msn = {
 	Cuneta: "Nuestros grueros no pueden asistir vehículos en esta situación. Acuda primero a las autoridades de tránsito antes de solicitar una grúa. Si tiene alguna duda comuníquese con nosotros.",
 	PreEnvio: "<p style=text-align:left;>Recuerde que para solicitar una grúa usted deber tener vigente:</p><p style=text-align:left;>-La póliza de seguro del vehículo.</p><p style=text-align:left;>Y debe tener en sus manos:</p><p style=text-align:left;>- El carnet de circulación del vehículo.</p>",
 	ErrorGrua: "Se ha detectado un problema con la conexión, verifique su conexión de datos.",
-	Estado: "A continuación coloque la dirección apróximada de su domicilio. Para su comodidad, el Estado ya fue incluido."
+	Estado: "A continuación coloque la dirección apróximada de su domicilio.",
+        GruaMP: "¡Excelente! Ahora indique la información para procesar su pago y enviarle al gruero mas cercano."
 };
 
 var mCedula = {
