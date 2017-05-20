@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "5e323976-18ce-4f39-a284-5523b18ba09c",
-      "lastModifiedDate": 1481323295229,
+      "lastModifiedDate": 1495295786890,
       "creationDate": 1448648554959
     },
     "XDK-app-designer": "true",
@@ -76,7 +76,7 @@
         "gitref": "",
         "name": "Splashscreen",
         "description": "Cordova Splashscreen Plugin",
-        "checksum": "452a4659"
+        "checksum": "c8aeabaf"
       },
       {
         "id": "cordova-plugin-geolocation",
@@ -353,7 +353,7 @@
             "type": "adhoc"
           },
           {
-            "relPath": "package-assets/TuGruero_Produccion.mobileprovision",
+            "relPath": "package-assets/TU_GRUERO_cliente.mobileprovision",
             "type": "production"
           }
         ],
